@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <title>Introduction to SpringBoot Security</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{~/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script type="text/javascript" src="/static/app.module.js" th:src="@{/app.module.js}"></script>
+    <script type="text/javascript" src="/static/admin.controller.js" th:src="@{/admin.controller.js}"></script>
+
+</head>
+<body ng-app="app" ng-controller="AdminController as adm" >
+<header>
+    <div th:fragment="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Espace signataire</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/index}"><i class="fa fa-home"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}"><i class="fa fa-home"></i>Gérer les utilisateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}">Gérer les roles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}">Consulter package </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Espace Admin</h1>
+        <p class="lead"> c'est la partie admin , juste l'admin qui peut l'accédé aprés son authentification , c'est un espace pour qu'un admin
+        peut gérer les utilisateurs et ses roles</p>
+    </div>
+</div>
+<div class="container">
+    <div class="container">
+
+        <table class="table table-striped custab">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom d'utilisateur </th>
+                <th>Active</th>
+                <th>Role</th>
+
+                <th class="text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr  ng-repeat="user in adm.admin">
+                <td>{{user.id}}</td>
+                <td>{{user.active}}</td>
+                <td>{{user.roles}}</td>
+                <td>{{user.username}}</td>
+
+                <td class="text-center">
+
+                    <button class="btn btn-outline-success" ><a th:href="@{~/admin/ajout}">Ajouter</a></button>
+                    <button class="btn btn-outline-primary"> Modifier</button>
+                    <button class="btn bg-danger" ng-click="adm.deleteuser(user.id)"> supprimer</button>
+
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+

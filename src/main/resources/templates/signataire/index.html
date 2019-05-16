@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <title>Introduction to SpringBoot Security</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{~/bootstrap.min.css}" rel="stylesheet"></head>
+<body>
+<header>
+    <div th:fragment="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">espace signataire</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/index}"><i class="fa fa-home"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}"><i class="fa fa-home"></i>Signer un document</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}">changer avatar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{~/signataire/index}">Modifier informations </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Fonction de hachage cryptographique</h1>
+            <p class="lead my-3">Une fonction de hachage est une fonction qui prend en entrée des données (ou messages)
+                de taille quelconque et produit une “empreinte” ou un “hash”. En règle générale, l’ensemble en sortie de
+                la fonction de hachage est plus petit que celui en entrée et de taille généralement fixe. Par exemple,
+                la fonction SHA-256 ne produit que des valeurs sur 256 bits quelle que soit la taille du message..</p>
+            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Hacher</strong>
+                    <h3 class="mb-0">Hacher un document </h3>
+                    <div class="mb-1 text-muted">Nov 12</div>
+                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" th:href="@{~/signataire/hachage}"class="stretched-link">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Enregistrer</text></svg>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Horadater</strong>
+                    <h3 class="mb-0">horadater un document</h3>
+                    <div class="mb-1 text-muted">Nov 11</div>
+                    <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="stretched-link">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Enregistrer</text></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
